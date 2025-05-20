@@ -1,4 +1,5 @@
 import dns.resolver
+from modules.config import divide
 from modules.recording import RecordLog 
 
 def checkDNS(domain:str, type_record:str):
@@ -6,10 +7,10 @@ def checkDNS(domain:str, type_record:str):
     status_dns, err = checkRecords(domain=domain, type_record=type_record)
     if err == None:
         status_dns.sort()
-        number_record = 0
         for record in status_dns:
-            number_record+=1
-            print(f"[{number_record}] {record}")
+            print(f"{record}")
+        print(f"{divide}\n")
+        
 
     else:
         print(f"Domain:\t{err[1]}\n{err[0]}")
