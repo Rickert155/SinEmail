@@ -1,8 +1,8 @@
 import dns.resolver
 
-def checkDNS(domain:str):
+def checkDNS(domain:str, type_record:str):
     """Проверям MX"""
-    status_dns, err = checkMX(domain=domain)
+    status_dns, err = checkRecords(domain=domain, type_record=type_record)
     if err == None:
         status_dns.sort()
         number_mx = 0
@@ -13,11 +13,11 @@ def checkDNS(domain:str):
     else:
         print(f"Domain:\t{err[1]}\n{err[0]}")
 
-def checkMX(domain:str):
+def checkRecords(domain:str, type_record:str):
     records = []
     err = None
     try:
-        for x in dns.resolver.resolve(domain, 'MX'):
+        for x in dns.resolver.resolve(domain, type_record):
             records.append(x.to_text())
     except Exception as dns_error:
         records = None

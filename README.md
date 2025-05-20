@@ -11,9 +11,9 @@ source venv/bin/activate
 pip install -r package.txt
 ```
 ## Запуск
-Можно передать домен или имейл параметром
+Можно передать домен или имейл параметром + тип записи
 ```sh
-python3 SinEmail.py --domain test@domain.com
+python3 SinEmail.py --domain test@domain.com MX
 ```
 Записк из своего скрипта пример
 ```sh
@@ -21,7 +21,7 @@ python3 SinEmail.py --domain test@domain.com
 # Пример test.py
 from modules.checker import checkDNS
 
-checkDNS(domain="google.com")
+checkDNS(domain="google.com", type_record="MX")
 ```
 ```sh
 python3 test.py
