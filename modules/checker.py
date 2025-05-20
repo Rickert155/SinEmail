@@ -1,6 +1,9 @@
 import dns.resolver
 from modules.config import divide
-from modules.recording import RecordLog 
+from modules.recording import (
+        RecordLog, 
+        RecordResult
+        )
 
 def checkDNS(domain:str, type_record:str):
     """Проверяем записи"""
@@ -9,11 +12,13 @@ def checkDNS(domain:str, type_record:str):
         status_dns.sort()
         for record in status_dns:
             print(f"{record}")
-        print(f"{divide}\n")
-        
+            RecordResult(domain=domain, record=record, type_record=type_record)
 
+        """Для визуального разделения"""
+        print(f"{divide}\n")
     else:
         print(f"Domain:\t{err[1]}\n{err[0]}")
+        """Логируем ошибки"""
         RecordLog(err=err, type_record=type_record)
 
 def checkRecords(domain:str, type_record:str):

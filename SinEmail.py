@@ -1,4 +1,5 @@
 import sys
+from modules.helper import helper
 from modules.checker import checkDNS
 
 #######################################
@@ -13,7 +14,7 @@ def SinEmail():
         if '@' in domain:domain = domain.split('@')[1]
         checkDNS(domain=domain, type_record=type_record)
 
-    else:print("help")
+    else:print(helper())
 
 
 #######################################
