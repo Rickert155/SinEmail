@@ -1,4 +1,5 @@
 import dns.resolver
+from modules.recording import Log
 
 def checkDNS(domain:str, type_record:str):
     """Проверям MX"""
@@ -12,6 +13,7 @@ def checkDNS(domain:str, type_record:str):
 
     else:
         print(f"Domain:\t{err[1]}\n{err[0]}")
+        Log(err=err, type_record=type_record)
 
 def checkRecords(domain:str, type_record:str):
     records = []
