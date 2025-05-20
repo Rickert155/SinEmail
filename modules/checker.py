@@ -1,19 +1,19 @@
 import dns.resolver
-from modules.recording import Log
+from modules.recording import RecordLog 
 
 def checkDNS(domain:str, type_record:str):
-    """Проверям MX"""
+    """Проверяем записи"""
     status_dns, err = checkRecords(domain=domain, type_record=type_record)
     if err == None:
         status_dns.sort()
-        number_mx = 0
+        number_record = 0
         for record in status_dns:
-            number_mx+=1
-            print(f"[{number_mx}] {record}")
+            number_record+=1
+            print(f"[{number_record}] {record}")
 
     else:
         print(f"Domain:\t{err[1]}\n{err[0]}")
-        Log(err=err, type_record=type_record)
+        RecordLog(err=err, type_record=type_record)
 
 def checkRecords(domain:str, type_record:str):
     records = []

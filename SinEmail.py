@@ -25,6 +25,7 @@ def Arguments():
         domain = params[2]
         type_record = params[3]
         return domain, type_record
+
     else:
         return None 
 
