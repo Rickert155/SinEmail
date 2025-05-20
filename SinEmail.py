@@ -1,6 +1,5 @@
 import sys
-from modules.checker import checkMX
-
+from modules.checker import checkDNS
 
 #######################################
 #       Основная функция чекера       #
@@ -10,17 +9,9 @@ def SinEmail():
     if argement != None:domain = argement
     else:domain = str(input("Domain: "))
 
-    """Проверям MX"""
-    status_dns, err = checkMX(domain=domain)
-    if err == None:
-        status_dns.sort()
-        number_mx = 0
-        for record in status_dns:
-            number_mx+=1
-            print(f"[{number_mx}] {record}")
+    if '@' in domain:domain = domain.split('@')[1]
+    checkDNS(domain=domain)
 
-    else:
-        print(f"Domain:\t{err[1]}\n{err[0]}")
 
 
 #######################################
@@ -28,8 +19,8 @@ def SinEmail():
 #######################################
 def Arguments():
     params = sys.argv
-    if len(params) == 2 and '.' in params[1]:
-        return params[1]
+    if len(params) == 3 and params[1] == '--domain':
+        return params[2]
     else:
         return None 
 

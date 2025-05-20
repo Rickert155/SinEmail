@@ -11,7 +11,19 @@ source venv/bin/activate
 pip install -r package.txt
 ```
 ## Запуск
-Можно передать домен параметром
+Можно передать домен или имейл параметром
 ```sh
-python3 SinEmail.py domain.com
+python3 SinEmail.py --domain test@domain.com
 ```
+Записк из своего скрипта пример
+```sh
+#!/usr/bin/python3
+# Пример test.py
+from modules.checker import checkDNS
+
+checkDNS(domain="google.com")
+```
+```sh
+python3 test.py
+```
+
