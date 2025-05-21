@@ -1,4 +1,5 @@
 from modules.checker import checkDNS
+from modules.colors import RED, GREEN, RESET, BLUE
 import csv, os
 
 types = ["MX", "TXT"]
@@ -26,9 +27,10 @@ def Calling(base:str):
                 except:name = None
                 
                 domain = row['Domain']
-                print(f"[{number_domain}] {domain}")
+                print(f"{RED}[{number_domain}]{RESET} {GREEN}{domain}{RESET}")
 
                 for type_record in types:
+                    print(f"{BLUE}Type: {type_record}{RESET}")
                     checkDNS(
                             domain=domain,
                             type_record=type_record,
