@@ -6,5 +6,4 @@ cd ..
 rm -rf SinEmail
 mv Sin SinEmail
 python3 -m venv venv
-source venv/bin/activate
-pip install -r package.txt
+/venv/bin/pip install -r package.txt
