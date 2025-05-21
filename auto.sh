@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-cp -r SinEmail ../Sin
+cp -r ../SinEmail ../Sin
 cp __init__.py ../
 cp package.txt ../package.txt
 cd ..
