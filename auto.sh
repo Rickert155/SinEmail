@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 cp -r SinEmail ../Sin
 cp __init__.py ../
-cp requirements.txt ../requirements.txt
+cp package.txt ../package.txt
 cd ..
 rm -rf SinEmail
 mv Sin SinEmail
