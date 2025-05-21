@@ -32,3 +32,20 @@ python3 test.py
 python3 SinEmail --calling test.csv
 ```
 База должна быть в csv, миниму должна содержать колонку с доменами "Domain"
+
+## Установка(как библиотеку)
+При желании можно работать как с отдельной библитекой.   
+Для этого можно:
+- клонировать репозиторий
+```sh
+git clone https://github.com/rickert156/SinEmail.git
+```
+- запустить скрипт bash
+```sh
+./auth.sh
+```
+Далее можно будет импортировать модули таким образом:
+```sh
+#!/usr/bin/python3
+from SinEmail.modules.checker import checkDNS
+```
