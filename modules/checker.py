@@ -5,14 +5,27 @@ from modules.recording import (
         RecordResult
         )
 
-def checkDNS(domain:str, type_record:str):
+def checkDNS(
+        domain:str, 
+        type_record:str,
+        name:str=None,
+        email:str=None,
+        company:str=None
+        ):
     """Проверяем записи"""
     status_dns, err = checkRecords(domain=domain, type_record=type_record)
     if err == None:
         status_dns.sort()
         for record in status_dns:
             print(f"{record}")
-            RecordResult(domain=domain, record=record, type_record=type_record)
+            RecordResult(
+                    domain=domain, 
+                    record=record, 
+                    type_record=type_record,
+                    name=name,
+                    email=email,
+                    company=company
+                    )
 
         """Для визуального разделения"""
         print(f"{divide}\n")
