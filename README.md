@@ -19,7 +19,7 @@ python3 SinEmail.py --domain test@domain.com MX
 ```sh
 #!/usr/bin/python3
 # Пример test.py
-from modules.checker import checkDNS
+from SinEmail.checker import checkDNS
 
 checkDNS(domain="google.com", type_record="MX")
 ```
@@ -47,5 +47,5 @@ git clone https://github.com/rickert156/SinEmail.git
 Далее можно будет импортировать модули таким образом:
 ```sh
 #!/usr/bin/python3
-from SinEmail.modules.checker import checkDNS
+from SinEmail.checker import checkDNS
 ```

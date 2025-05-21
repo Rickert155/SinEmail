@@ -1,7 +1,7 @@
 import sys
-from modules.helper import helper
-from modules.checker import checkDNS
-from modules.call_base import Calling
+from SinEmail.helper import helper
+from SinEmail.checker import checkDNS
+from SinEmail.call_base import Calling
 
 #######################################
 #       Основная функция чекера       #

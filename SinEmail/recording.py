@@ -1,5 +1,5 @@
 import csv, time, os
-from modules.config import (
+from SinEmail.config import (
         log_file, 
         result_file
         )

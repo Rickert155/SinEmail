@@ -1,6 +1,6 @@
 import dns.resolver
-from modules.config import divide
-from modules.recording import (
+from SinEmail.config import divide
+from SinEmail.recording import (
         RecordLog, 
         RecordResult
         )

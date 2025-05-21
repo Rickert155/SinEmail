@@ -1,5 +1,5 @@
-from modules.checker import checkDNS
-from modules.colors import RED, GREEN, RESET, BLUE
+from SinEmail.checker import checkDNS
+from SinEmail.colors import RED, GREEN, RESET, BLUE
 import csv, os
 
 types = ["MX", "TXT"]
