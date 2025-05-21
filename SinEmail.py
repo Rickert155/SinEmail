@@ -7,23 +7,26 @@ from modules.call_base import Calling
 #       Основная функция чекера       #
 #######################################
 def SinEmail():
-    argement = Arguments()
-    if argement != None:
-        mode = argement[-1]
-        if None not in argement and mode == "Domain":
-            domain, type_record = argement[0], argement[1]
-            print(domain, type_record)
+    try:
+        argement = Arguments()
+        if argement != None:
+            mode = argement[-1]
+            if None not in argement and mode == "Domain":
+                domain, type_record = argement[0], argement[1]
+                print(domain, type_record)
 
-            if '@' in domain:domain = domain.split('@')[1]
-            checkDNS(domain=domain, type_record=type_record)
+                if '@' in domain:domain = domain.split('@')[1]
+                checkDNS(domain=domain, type_record=type_record)
     
-        elif mode == "Base":
-            file_name = argement[0]
-            if '.csv' in file_name:
-                Calling(base=file_name) 
-            else:
-                print(helper())
-        else:print(helper())
+            elif mode == "Base":
+                file_name = argement[0]
+                if '.csv' in file_name:
+                    Calling(base=file_name) 
+                else:
+                    print(helper())
+            else:print(helper())
+    except KeyboardInterrupt:
+        print("\nExit...")
 
 
 #######################################
