@@ -1,0 +1,9 @@
+dnspython==2.7.0
+jedi==0.19.2
+packaging==25.0
+parso==0.8.4
+pudb==2025.1
+Pygments==2.19.1
+urwid==3.0.2
+urwid_readline==0.15.1
+wcwidth==0.2.13
