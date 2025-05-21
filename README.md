@@ -26,4 +26,9 @@ checkDNS(domain="google.com", type_record="MX")
 ```sh
 python3 test.py
 ```
-
+## Прогон целой базы
+Можно использовать данный модуль для прогона целой базы.
+```sh
+python3 SinEmail --calling test.csv
+```
+База должна быть в csv, миниму должна содержать колонку с доменами "Domain"
