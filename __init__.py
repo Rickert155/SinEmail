@@ -18,5 +18,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Full text of the GNU General Public License v3.0 is available at:
 http://www.gnu.org/licenses/gpl-3.0.txt
 """
-__author__ = "Rickert156 "
+__author__ = "Rickert156"
 __version__ = "0.1"
